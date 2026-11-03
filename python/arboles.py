@@ -7,8 +7,14 @@ class Nodo:
         self.der = der
 
 
-def espejo(raiz):
-    raise NotImplementedError("TODO espejo")
+def espejo(raiz: Nodo):
+        raiz.izq, raiz.der = raiz.der, raiz.izq
+        if (raiz.izq is not None):
+            espejo(raiz.izq)
+        if (raiz.der is not None):
+            espejo(raiz.der)
+        
+
 
 
 def son_espejo(a, b):
